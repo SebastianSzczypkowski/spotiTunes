@@ -1,19 +1,23 @@
 package pl.szczypkowski.spotitunes.entity;
 
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Track {
 
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String trackName;
 
-    public String getId() {
-        return id;
-    }
+
 
     public void setId(String id) {
         this.id = id;
@@ -26,4 +30,6 @@ public class Track {
     public void setTrackName(String trackName) {
         this.trackName = trackName;
     }
+
+
 }
