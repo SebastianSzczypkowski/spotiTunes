@@ -9,11 +9,14 @@ import { Tune } from '../common/tune';
 export class SearchForTunesService {
 
   private baseUrl='http://localhost:8080/album';
+  private userUrl='http://localhost:8080/user';
   constructor(private httpClient:HttpClient) { }
 
-  searchTunes(theKeyword:String):Observable<Tune>
+  searchTunes(theKeyword:String):Observable<Tune[]>
   {
     const searchUrl=`${this.baseUrl}/${theKeyword}`;
-   // return this.httpClient.get<Tune>;
+
+      
+      return this.httpClient.get<Tune[]>(searchUrl);
   }
 }

@@ -14,5 +14,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests().antMatchers("/user").authenticated();
         http.authorizeRequests().antMatchers("/album/*").authenticated();
         http.authorizeRequests().antMatchers("/add-track").authenticated().and().csrf().disable();
+        http.cors();
     }
 }
